@@ -1,0 +1,66 @@
+<app-header [headerTrendingMovies]="trendingMovies"></app-header>
+
+<div class="container py-5">
+
+    <div class="row py-4">
+        <div class="col-md-4 my-4 ">
+            <div class="brdr w-25  my-3 "></div>
+            <h2 class="my-1">Trending Movies <br>To Watch Now .</h2>
+            <p class="my-3 text-secondary ">Trending Movies To Watch Right Now</p>
+            <div class="brdr  w-100 mt-4 "></div>
+        </div>
+        <div *ngFor="let movie of trendingMovies" class="col-md-2">
+
+            <div class="movie position-relative">
+                <a [routerLink]="['/moviedetails',movie.id]">
+                    <img class="w-100" [src]="imagePrefix+movie.poster_path" alt="">
+                    <h3 class="h6 fw-bolder "> {{movie.title}}</h3>
+                    <div class="vote bg-lights p-1 position-absolute fw-bolder  end-0 top-0 ">
+                        {{movie.vote_average}}
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row mt-5 py-4">
+            <div class="col-md-4 my-4 ">
+                <div class="brdr w-25  my-3 "></div>
+                <h2 class="my-1">Trending Tv <br>To Watch Now .</h2>
+                <p class="my-3 text-secondary ">Trending Tv To Watch Right Now</p>
+                <div class="brdr  w-100 mt-4 "></div>
+            </div>
+            <div *ngFor="let tv of trendingTv" class="col-md-2">
+
+                <div class="tv position-relative">
+
+                    <img class="w-100" [src]="imagePrefix+tv.poster_path" alt="">
+                    <h3 class="h6 fw-bolder "> {{tv.name}}</h3>
+                    <div class="vote bg-lights p-1 position-absolute fw-bolder  end-0 top-0 ">
+                        {{tv.vote_average}}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-4 py-4">
+            <div class="col-md-4 my-4 ">
+                <div class="brdr w-25  my-3 "></div>
+                <h2 class="my-1">Trending Pepole <br>To Watch Now .</h2>
+                <p class="my-3 text-secondary ">Trending Pepole To Watch Right Now</p>
+                <div class="brdr  w-100 mt-4 "></div>
+            </div>
+            <div *ngFor="let person of trendingPepole" class="col-md-2">
+
+                <div class="tv position-relative">
+                    <img class="w-100" [src]="imagePrefix+person.profile_path" alt="">
+                    <h3 class="h6 fw-bolder "> {{person.name}}</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>

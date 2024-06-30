@@ -1,0 +1,39 @@
+<div class="container mt-5 py-5 mx-2">
+
+    <h2>Welcome TO ROXE Website </h2>
+    <br>
+
+    <p>Please Register or Login to open Home Page</p>
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <button (click)="goLogin()" class="btn  btn-outline-primary mx-2 my-4"> Login</button>
+            <button (click)="goRegister()" class="btn  btn-outline-warning m-4"> Register</button>
+        </div>
+
+
+
+        <div class="col-md-6">
+            <div class="w-12  py-2  my-4">
+
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Lazy Loading
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <li><a class="dropdown-item" routerLink="/settings/profile">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a routerLink="/settings" class="dropdown-item">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

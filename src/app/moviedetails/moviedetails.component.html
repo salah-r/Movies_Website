@@ -1,0 +1,35 @@
+<div class="container py-5">
+
+    <div class="row">
+
+
+        <div class="col-md-3">
+
+            <div class="position-relative">
+                <img class="w-100  " [src]="imagePrefix+movDetails.poster_path" alt="">
+                <div class="vote bg-lights p-1 position-absolute fw-bolder  end-0 top-0 ">
+                    {{movDetails.vote_average}}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h2 class="h1 mx-3 pt-1"> {{movDetails.original_title}}</h2>
+            <p class="text-secondary mt-3 ">{{movDetails.overview}},{{movDetails.overview}}</p>
+            <ul>
+                <h3 class="m-0">Catigories</h3>
+                <li *ngFor="let g of movDetails.genres" class="text-secondary">{{g.name}}</li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

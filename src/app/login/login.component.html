@@ -1,0 +1,49 @@
+<div class="container py-5 mt-5">
+
+    <form (ngSubmit)="onLogin(loginForm)" [formGroup]="loginForm" class="">
+
+        <h2>Login Now</h2>
+
+        <!-- <h3>{{loginForm.get("formControlName")?.errors|json}}</h3    > -->
+
+
+        <label class="mt-2" for="email">Email</label>
+        <input class="form-control my-2 w-50" type="email" formControlName="email">
+
+        <div *ngIf='loginForm.get("email")?.errors && loginForm.get("email")?.touched '>
+
+            <p *ngIf="loginForm.get('email')?.errors ?.['required'] " class="w-50 alert alert-warning my-0">email is
+                requierd
+            </p>
+            <p *ngIf="loginForm.get('email')?.errors ?.['email'] " class="w-50 alert alert-warning  my-0">email is
+                invalud
+            </p>
+        </div>
+
+        <label class="mt-2" for="password">Password</label>
+
+        <input class="form-control my-2 w-50" type="password" formControlName="password">
+
+        <div *ngIf='loginForm.get("password")?.errors && loginForm.get("password")?.touched '>
+
+            <p *ngIf="loginForm.get('password')?.errors ?.['required']" class="w-50 alert alert-warning my-0">password
+                is
+                requierd</p>
+            <p *ngIf="loginForm.get('password')?.errors ?.['pattern']" class="w-50 alert alert-warning mb-2 my-0">
+                password
+                must
+                start
+                with a capital letter then 3-5 small letter </p>
+        </div>
+
+        <p style="font-size: 10px ; "><a routerLink="/register">Froget Password?</a></p>
+
+        <div *ngIf="error" class=" w-50 alert alert-danger"> {{error}} </div>
+
+
+        <button [disabled]="loginForm.invalid" class="bg-info my-4" type="submit">
+            LogIn
+        </button>
+
+    </form>
+</div>
